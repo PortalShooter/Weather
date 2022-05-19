@@ -1,0 +1,36 @@
+.card {
+  &__wrapper {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 25px;
+    margin: 1rem;
+
+    border-radius: 10px;
+    background-color: rgba(#6b778d, 0.35);
+    cursor: pointer;
+    color: rgb(225, 225, 225);
+
+    flex: 1 0 30%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__city {
+    font-size: 1.5rem;
+  }
+  &__temp {
+    font-size: 1.25rem;
+  }
+  &__icon img {
+    height: 5rem;
+  }
+  &__desc {
+    margin-bottom: 0.8rem;
+    font-size: 1.25rem;
+  }
+}

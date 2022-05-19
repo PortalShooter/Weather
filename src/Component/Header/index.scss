@@ -1,0 +1,25 @@
+.header {
+  &__wrapper {
+    height: 100px;
+    background-color: #17223b;
+  }
+
+
+  &-search {
+    width: 30%;
+
+    &__input {
+      width: 100%;
+      border-radius: 10px;
+      border: none;
+      padding: 5px 15px;
+    }
+  }
+}
+
+.flex {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
