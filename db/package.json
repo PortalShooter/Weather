@@ -1,0 +1,15 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cityList.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dadata-suggestions": "^1.1.1",
+    "node-fetch": "^2.6.7"
+  }
+}

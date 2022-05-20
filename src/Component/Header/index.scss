@@ -1,9 +1,16 @@
+@import "../../global";
+
 .header {
   &__wrapper {
-    height: 100px;
-    background-color: #17223b;
+    height: 150px;
+    background-color: $dark-blue;
   }
-
+  &__body {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &-search {
     width: 30%;
@@ -15,11 +22,4 @@
       padding: 5px 15px;
     }
   }
-}
-
-.flex {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }

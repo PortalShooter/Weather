@@ -4,23 +4,23 @@ import './index.scss';
 import Pagination from "../Pagination";
 import {useState} from "react";
 
-const CityList = ({viewCard}) => {
-  const [activePage, setActivePage] = useState(9)
+const CityList = ({viewCards}) => {
+  const [activePage, setActivePage] = useState(1)
 
   let subarray = [];
-  for (let i = 0; i <Math.ceil(db.length/viewCard); i++){
-    subarray[i] = db.slice((i*viewCard), (i*viewCard) + viewCard);
+  for (let i = 0; i < Math.ceil(db.length/viewCards); i++){
+    subarray[i] = db.slice((i*viewCards), (i*viewCards) + viewCards);
   }
 
-
   return (
-    <div style={{background: '#263859'}}>
+    <div style={{background: '#263859', paddingBottom: '0.5rem'}}>
       <div className={'container'}>
         <div className={'city-list'}>
-          {subarray[activePage].map((el, index) => <CityCard desc={el.weather[0].description} icon={el.weather[0].icon} city={el.name} temp={el.main.temp} />)}
+          {subarray[activePage - 1].map((el, index) => <CityCard desc={el.weather[0].description} icon={el.weather[0].icon} city={el.name} temp={el.main.temp} />)}
         </div>
 
        <Pagination numberPage={subarray.length} activePage={activePage} setActivePage={setActivePage}/>
+
       </div>
     </div>
 

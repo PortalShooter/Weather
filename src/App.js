@@ -3,13 +3,12 @@ import CityList from "./Component/CityList";
 import {useState} from "react";
 
 function App() {
-  const [viewCard, setViewCard] = useState(15)
-
+  const [viewCards, setViewCards] = useState(15)
 
   return (
     <div>
-      <Header viewCard={viewCard}/>
-      <CityList viewCard={viewCard}/>
+      <Header viewCards={viewCards} setViewCards={setViewCards}/>
+      <CityList viewCards={viewCards}/>
     </div>
   );
 }

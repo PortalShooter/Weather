@@ -1,3 +1,5 @@
+@import "../../global";
+
 .card {
   &__wrapper {
     min-height: 250px;
@@ -8,7 +10,7 @@
     margin: 1rem;
 
     border-radius: 10px;
-    background-color: rgba(#6b778d, 0.35);
+    background-color: $gray-blue-opacity;
     cursor: pointer;
     color: rgb(225, 225, 225);
 

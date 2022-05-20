@@ -1,0 +1,40 @@
+@import "../../global";
+
+.viewCards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $text-white;
+
+  &__btns {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  &__btn {
+    padding: 0.5rem 1rem;
+    background-color: $gray-blue-opacity;
+
+    cursor: pointer;
+
+    border: 3px solid $gray;
+    transition: 0.3s;
+
+    &:first-child {
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+      border-right: none;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+      border-left: none;
+    }
+
+    &:hover,
+    &_active {
+      background-color: $gray;
+    }
+  }
+}

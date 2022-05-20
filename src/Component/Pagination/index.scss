@@ -1,9 +1,26 @@
-.pagination {
-  padding: 20px 0;
-  margin: 0 auto;
-  max-width: 400px;
-  display: flex;
-  justify-content: space-between;
+@import "../../global";
 
-  color: rgb(225, 225, 225);
+.pagination {
+  padding: 2rem 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  color: $text-white;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 0.8rem;
+
+    border-radius: 100px;
+    background-color: $gray-blue-opacity;
+
+    &_active {
+      background-color: $gray;
+    }
+  }
 }

@@ -1,11 +1,11 @@
-import '../../global.scss'
 import './index.scss'
+import ViewCardBtn from "../ViewCards/ViewCardBtn";
 
-const Header = ({viewCard}) => {
+const Header = ({viewCards, setViewCards}) => {
 
   return (
     <div className={'header__wrapper'}>
-      <div className={'container flex'}>
+      <div className={'container header__body'}>
 
         <div className={'header-search'}>
           <input className={'header-search__input'} placeholder={'Поиск по годорам'}/>
@@ -15,8 +15,13 @@ const Header = ({viewCard}) => {
           фильтр
         </div>
 
-        <div className="viewCard">
-          {viewCard}
+        <div className="header__viewCards viewCards">
+          Города на странице:
+          <div className={'viewCards__btns'}>
+            <ViewCardBtn viewCards={viewCards} setViewCards={setViewCards} value={15} />
+            <ViewCardBtn viewCards={viewCards} setViewCards={setViewCards} value={30} />
+            <ViewCardBtn viewCards={viewCards} setViewCards={setViewCards} value={45} />
+          </div>
         </div>
       </div>
     </div>
