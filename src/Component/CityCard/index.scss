@@ -8,13 +8,19 @@
     justify-content: space-between;
     padding: 20px 25px;
     margin: 1rem;
+    flex: 1 0 30%;
 
     border-radius: 10px;
     background-color: $gray-blue-opacity;
     cursor: pointer;
     color: rgb(225, 225, 225);
+    transition: 0.3s;
 
-    flex: 1 0 30%;
+
+    &:hover {
+      background-color: $gray;
+
+    }
   }
 
   &__header {

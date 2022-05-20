@@ -1,0 +1,17 @@
+@import "../../global";
+
+.search {
+  width: 40%;
+
+  &__input {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
