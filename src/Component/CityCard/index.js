@@ -14,7 +14,10 @@ const CityCard = (props) => {
   const desc = props.desc[0].toUpperCase() + props.desc.slice(1);
 
   return (
-    <div className={'card__wrapper'}>
+    <div onClick={() =>{
+      props.data.img = imgName()
+      props.setModalDetail(props.data)
+    }} className={'card__wrapper'}>
       <div className={'card__icon'}>
         <img src={imgName()} alt="Иконка погоды"/>
       </div>

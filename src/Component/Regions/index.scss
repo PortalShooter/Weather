@@ -1,0 +1,39 @@
+@import '../../global.scss';
+
+.regions {
+  position: relative;
+
+  &__btn {
+    border: none;
+    font-size: 1rem;
+    background: transparent;
+    color: $text-white;
+    cursor: pointer;
+  }
+
+  &__modal {
+    position: absolute;
+    left: -300px;
+    top: 40px;
+    padding: 10px;
+
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+
+    background: rgb(38, 56, 89);
+    border: 3px solid $gray;
+
+    &_visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__column {
+    min-width: 200px;
+    &:not(:last-child) {
+      margin-right: 20px;
+
+    }
+  }
+}

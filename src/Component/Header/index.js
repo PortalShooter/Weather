@@ -1,8 +1,9 @@
 import './index.scss'
 import ViewCardBtn from "../ViewCards/ViewCardBtn";
 import Search from "../Search";
+import Regions from "../Regions";
 
-const Header = ({viewCards, setViewCards, searchValue, setSearchValue}) => {
+const Header = ({viewCards, setViewCards, searchValue, setSearchValue, setFilterRegion}) => {
 
   return (
     <div className={'header__wrapper'}>
@@ -10,9 +11,7 @@ const Header = ({viewCards, setViewCards, searchValue, setSearchValue}) => {
 
         <Search searchValue={searchValue} setSearchValue={setSearchValue} />
 
-        <div className={'filter'}>
-          фильтр
-        </div>
+        <Regions setFilterRegion={setFilterRegion} />
 
         <div className="header__viewCards viewCards">
           Городов на странице:

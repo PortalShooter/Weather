@@ -4,22 +4,23 @@ import './index.scss';
 import Pagination from "../Pagination";
 import {useEffect, useState} from "react";
 
-const CityList = ({viewCards, searchValue, activePage, setActivePage}) => {
+const CityList = ({viewCards, searchValue, activePage, setActivePage, setModalDetail, filterRegion}) => {
   const [filterDB, setFilterDB] = useState([])
   const [subArray, setSubArray] = useState([])
   const [currentArr, setCurrentArr] = useState([])
 
   useEffect(() => {
+    console.log(123)
     if (searchValue) {
       const arr = [];
       db.map(el => {
-        if (el.name.toLowerCase().indexOf(searchValue) !== -1) {
+        if (el.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1 && !filterRegion.hasOwnProperty(el.region)) {
           arr.push(el)
         }
       })
       setFilterDB(arr)
     } else setFilterDB(db)
-  }, [searchValue])
+  }, [searchValue, filterRegion])
 
   useEffect(() => {
     const arr = []
@@ -32,7 +33,7 @@ const CityList = ({viewCards, searchValue, activePage, setActivePage}) => {
   useEffect(() => {
     let arr
     if (subArray.length && activePage <= subArray.length) {
-      arr = subArray[activePage - 1].map((el) => <CityCard desc={el.weather[0].description} icon={el.weather[0].icon} city={el.name} temp={el.main.temp} />)
+      arr = subArray[activePage - 1].map((el) => <CityCard data={el} desc={el.weather[0].description} icon={el.weather[0].icon} city={el.name} temp={el.main.temp} setModalDetail={setModalDetail} />)
     } if (subArray.length && activePage > subArray.length) setActivePage(subArray.length)
 
     setCurrentArr(arr)
@@ -48,7 +49,6 @@ const CityList = ({viewCards, searchValue, activePage, setActivePage}) => {
        <Pagination numberPage={subArray.length} activePage={activePage} setActivePage={setActivePage}/>
       </div>
     </div>
-
   )
 }
 
