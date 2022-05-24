@@ -10,8 +10,7 @@ const CityList = ({viewCards, searchValue, activePage, setActivePage, setModalDe
   const [currentArr, setCurrentArr] = useState([])
 
   useEffect(() => {
-    console.log(123)
-    if (searchValue) {
+    if (searchValue || Object.keys(filterRegion).length > 0) {
       const arr = [];
       db.map(el => {
         if (el.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1 && !filterRegion.hasOwnProperty(el.region)) {
